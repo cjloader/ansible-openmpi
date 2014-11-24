@@ -15,4 +15,7 @@
          - openmpi-common
          - openmpi-doc 
          - libopenmpi-dev -y
+  - name: setting up passwordless authentication
+      command: ssh-keygen -t rsa -b 2048 -C "Open MPI"
+      command: cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
