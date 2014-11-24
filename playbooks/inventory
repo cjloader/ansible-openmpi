@@ -1,7 +1,4 @@
-[host]
-192.168.122.100
-[servers]
-192.168.122.100 
-192.168.122.254 
-192.168.122.136 
-192.168.122.246
+192.168.122.100 ansible_ssh_pass=Rackspace!
+192.168.122.254 ansible_ssh_pass=Rackspace!
+192.168.122.136 ansible_ssh_pass=Rackspace!
+192.168.122.246 ansible_ssh_pass=Rackspace!
