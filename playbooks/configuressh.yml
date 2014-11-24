@@ -4,7 +4,7 @@
   sudo: yes
   tasks:
     - name: install ssh on vms
-      apt: name=sshd update_cache=yes
+      apt: name=ssh update_cache=yes
     - name: generate ssh-keys for new vms
       command: ssh-keygen -t rsa -b 2048 -C "OpenMPI"
     - name: copy keys to authorized_keys
