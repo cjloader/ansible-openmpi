@@ -1,5 +1,5 @@
 --
-- name: Configure OpenMPI on servers
+- name: configure OpenMPI on servers
   hosts: servers
   sudo: true
   vars:
@@ -8,11 +8,11 @@
  - name: configure machine for OpenMPI
    apt: name=build-essential update_cache=yes
  - name: install the required packages for OpenMPI
- action: apt package={{item}} state=installed
-  with_items:  
-   - openmpi-bin 
-   - openmpi-checkpoint
-   - openmpi-common
-   - openmpi-doc 
-   - libopenmpi-dev -y
+     action: apt package={{item}} state=installed
+       with_items:  
+         - openmpi-bin 
+         - openmpi-checkpoint
+         - openmpi-common
+         - openmpi-doc 
+         - libopenmpi-dev -y
 
