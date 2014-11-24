@@ -1,6 +1,6 @@
 ---
 - name: configure your newly created vms
-  hosts: inventory
+  hosts: servers
   sudo: yes
   - tasks
     - name: install ssh on vms
