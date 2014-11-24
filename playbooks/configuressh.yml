@@ -1,0 +1,10 @@
+---
+- name: configure your newly created vms
+  hosts: inventory
+  sudo: yes
+  - tasks
+    - name: install ssh on vms
+      apt: name=sshd update_cache=yes
+    - name: generate ssh-keys for new vms
+      command: ssh-keygen -t rsa -b 2048 -C "OpenMPI"
+    - name: copy keys to authorized_keys
