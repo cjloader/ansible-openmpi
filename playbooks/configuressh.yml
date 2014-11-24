@@ -2,7 +2,7 @@
 - name: configure your newly created vms
   hosts: servers
   sudo: yes
-  tasks
+  tasks:
     - name: install ssh on vms
       apt: name=sshd update_cache=yes
     - name: generate ssh-keys for new vms
