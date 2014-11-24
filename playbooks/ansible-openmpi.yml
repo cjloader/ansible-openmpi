@@ -1,4 +1,4 @@
---
+---
 - name: configure OpenMPI on servers
   hosts: servers
   sudo: true
