@@ -5,8 +5,6 @@
   vars:
   remote_user: root
   tasks:
-   - name copy key
-     authorized_key: user=cameronjloader key="{{ lookup('file', '/home/cameronjloader/.ssh/id_rsa.pub') }}"
    - name: configure machine for OpenMPI
      apt: name=build-essential update_cache=yes
    - name: install the required packages for OpenMPI
