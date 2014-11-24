@@ -1,6 +1,15 @@
 --
-- hosts: servers
+ -name: Configure OpenMPI on servers
+  hosts: servers
+  sudo: true
   vars:
  remote_user: root
  tasks:
- - name: download openmpi  
+ -name: install openmpi
+   apt: name=build-essential update_cache=yes
+   apt: name=openmpi-bin update_cache=yes
+   apt: name=openmpi-checkpoint update_cache=yes
+   apt: name=openmpi-common update_cache=yes
+   apt: name=openmpi-doc 
+   apt: name=libopenmpi-dev -y update_cache=yes
+
