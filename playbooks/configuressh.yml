@@ -8,3 +8,4 @@
     - name: generate ssh-keys for new vms
       command: ssh-keygen -t rsa -b 2048 -C "OpenMPI"
     - name: copy keys to authorized_keys
+      command: cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
