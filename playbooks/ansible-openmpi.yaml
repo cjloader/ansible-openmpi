@@ -1,0 +1,6 @@
+--
+- hosts: servers
+  vars:
+ remote_user: root
+ tasks:
+ - name: download openmpi  
