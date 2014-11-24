@@ -1,6 +1,6 @@
 ---
 - name: configure OpenMPI on servers
-  hosts: all
+  hosts: servers
   sudo: true
   vars:
   remote_user: root
