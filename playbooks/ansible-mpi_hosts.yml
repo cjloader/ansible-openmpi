@@ -1,0 +1,10 @@
+---
+- name: configure OpenMPI on servers
+  hosts: host
+  sudo: true
+  vars:
+  remote_user: root
+  tasks:
+   - name: configure machine for OpenMPI
+   - command: cp inventory mpi_hosts
+   
