@@ -6,5 +6,6 @@
   remote_user: root
   tasks:
    - name: configure machine for OpenMPI
-   - command: cp inventory mpi_hosts
+   - command: cp inventory; mv inventory mpi_hosts;
+   - command: sed '/[host]/d' mpi_hosts; sed '/[servers]/d' mpi_hosts;
    
