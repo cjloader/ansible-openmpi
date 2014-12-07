@@ -1,11 +1,17 @@
 ---
-- name: configure OpenMPI on servers
+- name: configure mpi_hosts file on host
   hosts: host
   sudo: true
   vars:
   remote_user: root
   tasks:
-   - name: Creating or Updating mpi_host file for OpenMPI
-   - command: cp inventory; mv inventory mpi_hosts;
-   - command: sed '/[host]/d' mpi_hosts; sed '/[servers]/d' mpi_hosts;
-   
+   - name: removing old mpi_hosts (if exists)
+     command: rm mpi_hosts
+   - name: moving inventory to host file
+     action: copy src=inventory dest=/root/
+   - name: renaming inventory to mpi_hosts
+     command: mv inventory mpi_hosts
+   - name: editing mpi_hosts file
+     command: sed -i '1,2d' mpi_hosts
+   - name: continuing editing
+     command: sed -i '/[servers]/d' mpi_hosts
