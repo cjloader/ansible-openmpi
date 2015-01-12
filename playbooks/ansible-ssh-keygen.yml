@@ -5,5 +5,9 @@
   vars:
   remote_user: root
   tasks:
-  - name: Gennerating SSH Keys
+  - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
+  - name: Obtaining Keys
+    fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/
+  - name: Copying SSH keys to authorized_keys
+    command: cat ~/.ssh/tmp/* >> ~/.ssh/authorized_keys
