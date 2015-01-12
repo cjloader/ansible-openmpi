@@ -5,8 +5,6 @@
   vars:
   remote_user: root
   tasks:
-   - name: removing old mpi_hosts (if exists)
-     command: rm mpi_hosts
    - name: moving inventory to host file
      action: copy src=inventory dest=/root/
    - name: renaming inventory to mpi_hosts
