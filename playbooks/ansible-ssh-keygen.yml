@@ -12,6 +12,6 @@
   - name: Copying SSH keys to Machines
     synchronize: src=~/.ssh/tmp/ dest=~/.ssh/tmp recursive=yes
   - name: Updating authorized keys (deleting old one)
-    shell: rm ~/.ssh/authorized_keys
+    command: rm ~/.ssh/authorized_keys
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
