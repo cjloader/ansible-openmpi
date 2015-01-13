@@ -6,7 +6,7 @@
   remote_user: root
   tasks:
   - name: Generating SSH Keys
-    user: name=root generate_ssh_key=yes
+    user: name=root generate_ssh_key=yes ask_pass
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest=~/Dropbox/ansible-openmpi/playbooks/.ssh/tmp/ recursive=yes
   - name: Copying SSH keys to Machines
