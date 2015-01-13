@@ -3,7 +3,7 @@
   hosts: servers
   sudo: true
   vars:
-  remote_user: root --ask_pass
+  remote_user: root ask_pass
   tasks:
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
