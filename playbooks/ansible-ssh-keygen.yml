@@ -10,6 +10,6 @@
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/
   - name: Copying SSH keys to Machines
-    synchronize: src=129.115.3.56/Users/cameronloader/.ssh/tmp/* dest=~/.ssh/tmp --recursive=yes
+    synchronize: src=129.115.3.56/Users/cameronloader/.ssh/tmp/* dest=~/.ssh/tmp recursive=yes
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
