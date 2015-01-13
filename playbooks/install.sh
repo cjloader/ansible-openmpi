@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #SSH key copy
-ssh-keygen -t rsa;
-for i in $(cat inventory); cat ~/.ssh/id_rsa.pub | ssh root@$i "rm ~/.ssh/authorized_keys; cat >> ~/.ssh/authorized_keys"; done
+for i in $(cat inventory); do cat ~/.ssh/id_rsa.pub | ssh root@$i "rm ~/.ssh/authorized_keys; cat >> ~/.ssh/authorized_keys"; done
 ansible-playbook ansible-ssh-keygen.yml;
 #run ansible for open-mpi
 ansible-playbook ansible-openmpi.yml;
