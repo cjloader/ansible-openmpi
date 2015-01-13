@@ -10,4 +10,4 @@
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/
   - name: Copying SSH keys to authorized_keys
-    command: cat ~/.ssh/tmp/* >> ~/.ssh/authorized_keys
+    command: cat ~/.ssh/tmp/166.78.62.*/root/* >> ~/.ssh/authorized_keys
