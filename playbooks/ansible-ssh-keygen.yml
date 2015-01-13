@@ -3,10 +3,10 @@
   hosts: servers
   sudo: true
   vars:
-  remote_user: root
+  remote_user: root --ask_pass
   tasks:
   - name: Generating SSH Keys
-    user: name=root generate_ssh_key=yes ask_pass
+    user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest=~/Dropbox/ansible-openmpi/playbooks/.ssh/tmp/ recursive=yes
   - name: Copying SSH keys to Machines
