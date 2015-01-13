@@ -3,10 +3,8 @@
   hosts: servers
   sudo: true
   vars:
-  remote_user: root ask_pass
+  remote_user: root --ask-pass
   tasks:
-  - name: initializing first SSH connection
-    command: for i in $(cat inventory); do cat ~/.ssh/id_rsa.pub | ssh root@$i "rm ~/.ssh/authorized_keys; cat >> ~/.ssh/authorized_keys"; done
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
