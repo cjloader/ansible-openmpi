@@ -10,6 +10,6 @@
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/
   - name: Copying SSH keys to Machines
-    copy: src=~/.ssh/tmp/166.78.164.*/ dest=~/.ssh/tmp/ directory_mode=yes
+    copy: src=~/.ssh/tmp/166.78.164.*/ dest=~/.ssh/ directory_mode=yes
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
