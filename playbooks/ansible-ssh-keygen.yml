@@ -8,6 +8,6 @@
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
-    fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/
+    fetch: src=~/.ssh/id_rsa.pub dest=/root/.ssh/tmp/
   - name: Copying SSH keys to authorized_keys
     command: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
