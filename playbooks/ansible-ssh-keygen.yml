@@ -5,6 +5,10 @@
   vars:
   remote_user: root
   tasks:
+  - name: Generating SSH key on local machine
+    local_action: user name=cameronloader generate_ssh_key=yes
+  - name: Copying key to authorized_keys (locally)
+    local_action: command cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
