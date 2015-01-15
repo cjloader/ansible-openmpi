@@ -5,7 +5,7 @@
   vars:
   remote_user: root
   tasks:
-  - name Getting rid of old authorized_keys file
+  - name: Getting rid of old authorized_keys file
     command: rm .ssh/authorized_keys
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
