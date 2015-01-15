@@ -10,8 +10,8 @@
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
-    fetch: src=~/.ssh/id_rsa.pub dest={{ inventory_hosts }}/.ssh/tmp/ recursive=yes
+    fetch: src=~/.ssh/id_rsa.pub dest=166.78.164.50/root/.ssh/tmp/ recursive=yes
   - name: Copying SSH keys to Machines
     synchronize: src=~/.ssh/tmp/ dest=~/.ssh/tmp recursive=yes
   - name: Adding to the list of authorized_keys  
-    shell: cat {{ inventory_hosts }}/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    shell: cat 166.78.164.50/root/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
