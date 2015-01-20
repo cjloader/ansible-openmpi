@@ -10,6 +10,8 @@
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest=groups['host']:/root/.ssh/tmp/ recursive=yes
   - name: Copying SSH keys to Machines
-    copy: src=groups['host']:/root/.ssh/tmp/ dest=groups['servers']:~/.ssh/tmp
+    copy: src=$item dest=groups['servers']:~/.ssh/tmp 
+        with_fileglob:
+        - groups['host']:/root/.ssh/tmp/*
   - name: Adding to the list of authorized_keys  
     shell: cat groups['servers']:~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
