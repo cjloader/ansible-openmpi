@@ -1,4 +1,5 @@
 ---
+- name: Removing all items associated with OpenMPI
   hosts: servers
   sudo: true
   vars:
