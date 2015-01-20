@@ -4,10 +4,10 @@
   vars:
   remote_user: root
   tasks:
-   - name: configure machine for OpenMPI
-     apt: name=build-essential update_cache=yes
-   - name: install the required packages for OpenMPI
-     action: apt package={{item}} state=installed
+   - name: Removing OpenMPI from machines
+     apt: name=build-essential state=absent
+   - name: Removing the required packages for OpenMPI
+     action: apt package={{item}} state=absent
      with_items:
      - openmpi-bin 
      - openmpi-checkpoint
