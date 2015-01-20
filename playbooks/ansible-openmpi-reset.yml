@@ -18,4 +18,4 @@
    - name: Removing SSH files
      command: rm -rf .ssh/tmp; rm .ssh/id_rsa.pub;
    - name: Removing mpi_hosts file
-     command: rm mpi_hosts
+     command: rm groups['host']:mpi_hosts
