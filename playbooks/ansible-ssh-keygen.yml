@@ -14,4 +14,4 @@
     with_fileglob:
     - groups['host']:/root/.ssh/tmp/*
   - name: Adding to the list of authorized_keys  
-    shell: cat groups['servers']:~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    shell: ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
