@@ -14,3 +14,7 @@
      - openmpi-common
      - openmpi-doc 
      - libopenmpi-dev
+   - name: Removing SSH files
+     command: rm -rf .ssh/tmp
+   - name: Removing mpi_hosts file
+     command: rm mpi_hosts
