@@ -16,6 +16,8 @@
      - openmpi-doc 
      - libopenmpi-dev
    - name: Removing SSH files
-     command: rm -rf .ssh/tmp; rm .ssh/*;
+     command: rm -rf .ssh/tmp  
+   - name: Continuing deleting SSH files
+     command: rm .ssh/*;
    - name: Removing mpi_hosts file
      file: path=/root/mpi_hosts state=absent
