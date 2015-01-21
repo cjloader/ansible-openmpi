@@ -13,8 +13,6 @@
     synchronize: mode=pull src=.ssh/tmp dest=.ssh/tmp/
     delegate_to: {{ item }}
     with_items:
-    - {% for h in groups['host'] -%}
-      {{ hostvars[h]['ansible_default_ipv4']['address'] }}
-      {% endfor %}
+    - {{ hostvars[groups['host']]['ansible_default_ipv4']['address'] }}
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
