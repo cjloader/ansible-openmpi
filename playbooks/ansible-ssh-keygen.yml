@@ -8,7 +8,7 @@
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
-    fetch: src=~/.ssh/id_rsa.pub dest=groups['host']:/root/.ssh/tmp/ recursive=yes
+    fetch: src=~/.ssh/id_rsa.pub dest=groups['host']:/root/.ssh/tmp/
   - name: Copying SSH keys to Machines
     copy: src=$item dest=groups['servers']:/root/.ssh/tmp 
     with_fileglob:
