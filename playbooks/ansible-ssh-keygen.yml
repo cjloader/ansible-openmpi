@@ -10,6 +10,6 @@
   - name: Obtaining Keys
     fetch: src=~/.ssh/id_rsa.pub dest={{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp recursive=yes
   - name: Copying SSH keys to Machines
-    file: src={{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp/* dest=/.ssh/ state=directory
+    file: src={{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp/* dest=~/.ssh state=directory
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
