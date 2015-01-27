@@ -19,5 +19,3 @@
      shell: rm -rf /root/.ssh/*
    - name: Removing mpi_hosts file
      file: path=/root/mpi_hosts state=absent
-   - name: Removing local SSH files
-     local_action: file path=/.ssh/* state=absent
