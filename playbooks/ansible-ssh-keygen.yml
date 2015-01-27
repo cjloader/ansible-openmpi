@@ -8,8 +8,8 @@
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
-    fetch: src=~/.ssh/id_rsa.pub dest={{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp/ recursive=yes
+    fetch: src=~/.ssh/id_rsa.pub dest=root@{{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp/ recursive=yes
   - name: Copying SSH keys to Machines
-    copy: src={{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/ dest=~/.ssh/ directory_mode
+    copy: src=root@{{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/ dest=~/.ssh/ directory_mode
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
