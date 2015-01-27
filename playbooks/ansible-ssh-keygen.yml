@@ -12,6 +12,6 @@
   - name: Copying SSH keys to Machines
     copy: src={{ item }} dest=/.ssh/tmp/
     with_items:
-      - {{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp/*
+    - {{ hostvars[groups['servers'][0]]['ansible_eth0']['ipv4']['address'] }}:~/.ssh/tmp/*
   - name: Adding to the list of authorized_keys  
     shell: cat ~/.ssh/tmp/166.78.164.*/root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
