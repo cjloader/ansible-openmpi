@@ -5,8 +5,6 @@
   vars:
   remote_user: root
   tasks:
-   - name: configure machine for OpenMPI
-     apt: name=build-essential update_cache=yes
    - name: install the required packages for OpenMPI
      action: apt package={{item}} state=installed
      with_items:
