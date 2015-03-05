@@ -5,6 +5,8 @@
   vars:
   remote_user: root
   tasks:
+  - name: Installing required essentials
+    apt: name=build-essential state=installed
   - name: Generating SSH Keys
     user: name=root generate_ssh_key=yes
   - name: Obtaining Keys
